@@ -39,8 +39,8 @@ class FileStorage():
         file exists"""
 
         current_classes = {'BaseModel': BaseModel, 'User': User,
-                   'City': City, 'Review': Review, 'Amenity': Amenity,
-                   'Place': Place, 'State': State}
+                           'City': City, 'Review': Review, 'Amenity': Amenity,
+                            'Place': Place, 'State': State}
 
         if not os.path.exists(FileStorage.__file_path):
             return

@@ -37,19 +37,19 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    
+
     def precmd(self, line):
         """Defines instructions to execute before <line>
             is interpreted
         """
         if not line:
             return '\n'
-        
+
         pattern = re.compile(r"(\w+)\.(\w+)\((.*)\)")
         match_list = pattern.findall(line)
         if not match_list:
             return super().precmd(line)
-        
+
         match_tuple = match_list[0]
         if not match_tuple[2]:
             if match_tuple[1] == "count":
@@ -76,7 +76,6 @@ class HBNBCommand(cmd.Cmd):
                     match_tuple[1], match_tuple[0],
                     re.sub("[\"\']", "", args[0]),
                     re.sub("[\"\']", "", args[1]), args[2])
-                    
 
     def do_EOF(self, line):
         """handles the EOF function"""
